@@ -5,20 +5,6 @@ import { count } from "console";
 class Counter extends Component {
   state = {
     count: 0,
-    tags: [
-      {
-        name: "tag1",
-        id: 1,
-      },
-      {
-        name: "tag2",
-        id: 2,
-      },
-      {
-        name: "tag3",
-        id: 3,
-      },
-    ],
   };
 
   render() {
@@ -32,18 +18,18 @@ class Counter extends Component {
     );
   }
 
-  renderTags() {
-    if (this.state.tags.length === 0) {
-      return <p>There are no items in List !</p>;
-    }
-    return (
-      <ul>
-        {this.state.tags.map((tag) => (
-          <li key={tag.id}>{tag.name}</li>
-        ))}
-      </ul>
-    );
-  }
+  // renderTags() {
+  //   if (this.state.tags.length === 0) {
+  //     return <p>There are no items in List !</p>;
+  //   }
+  //   return (
+  //     <ul>
+  //       {this.state.tags.map((tag) => (
+  //         <li key={tag.id}>{tag.name}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   private getBadgeClasses = () => {
     let classes = "badge m-2 badge-";
