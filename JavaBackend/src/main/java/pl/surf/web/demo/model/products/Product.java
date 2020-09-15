@@ -1,16 +1,27 @@
-package pl.surf.web.demo.model;
+package pl.surf.web.demo.model.products;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
-
+@Entity
+@Table(name = "products")
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private String name;
+    @Column
     private String description;
+    @Column(nullable = false)
     private BigDecimal price;
 
-    public Product(String name) {
+    public Product(String name, BigDecimal price) {
         this.name = name;
+        this.price = price;
     }
 
     public String getName() {

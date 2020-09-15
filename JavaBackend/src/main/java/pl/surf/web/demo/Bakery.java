@@ -8,10 +8,10 @@ import pl.surf.web.demo.configuration.AppProperties;
 
 @SpringBootApplication
 @EnableConfigurationProperties(AppProperties.class)
-public class SurfApplication {
+public class Bakery {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SurfApplication.class, args);
+		SpringApplication.run(Bakery.class, args);
 	}
 
 

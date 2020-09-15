@@ -1,4 +1,4 @@
-package pl.surf.web.demo.model;
+package pl.surf.web.demo.model.products;
 
 public enum GrainType {
     TEFF(""),
