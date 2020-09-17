@@ -1,12 +1,13 @@
 import React, { FC } from "react";
+import InputButtonWrapper from "../components/inputText/inputButtonWrapper";
 import InputField from "../components/inputText/inputTextWithLabel";
 
-interface LoginPageProps {}
-
-const LoginPage: FC<LoginPageProps> = () => {
+const LoginPage = () => {
   return (
     <h2>
-      <InputField />
+      <InputButtonWrapper>
+        <InputField text="test Text" name="Test name" value="Test Value" />
+      </InputButtonWrapper>
     </h2>
   );
 };

@@ -4,26 +4,30 @@ import About from "./pages/About";
 import Navbar from "./components/navBar/Navbar";
 import LoginPage from "./pages/LoginPage";
 import GlobalStyle from "./components/GlobalStyle";
-
-const date = new Date();
+import Products from "./pages/Products";
+import Header from "./components/test/header";
+import CustomDate from "./components/date/custom-date";
 
 const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Navbar date={date} />
+      <Navbar />
       <Switch>
-        <Route path="/about">
+        <Route exact path="/about">
           <About />
         </Route>
-        <Route path="/users">
+        <Route exact path="/users">
           <Users />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <LoginPage />
+        </Route>
+        <Route exact path="/products">
+          <Products />
         </Route>
       </Switch>
     </BrowserRouter>

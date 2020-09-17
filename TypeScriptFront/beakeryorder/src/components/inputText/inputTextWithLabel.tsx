@@ -1,13 +1,19 @@
 import React from "react";
 
-const InputField = () => {
+type InputFieldProps = {
+  text: string;
+  name: string;
+  value: string;
+};
+
+const InputField = (props: InputFieldProps) => {
   return (
     <form>
       <label>
         Name:
-        <input type="text" name="name" />
+        <input type={props.text} name={props.name} />
       </label>
-      <input type="submit" value="Wyślij" />
+      <input type="submit" value={props.value} />
     </form>
   );
 };
