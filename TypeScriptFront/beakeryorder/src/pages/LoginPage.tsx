@@ -6,7 +6,7 @@ const LoginPage = () => {
   return (
     <h2>
       <InputButtonWrapper>
-        <InputField text="test Text" name="Test name" value="Test Value" />
+        <InputField />
       </InputButtonWrapper>
     </h2>
   );

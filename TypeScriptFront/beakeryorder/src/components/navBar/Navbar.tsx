@@ -31,16 +31,26 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <NavbarItem>Time: {time}</NavbarItem>
-      <Link to="/about">
-        <NavbarItem>O piekarni</NavbarItem>
-      </Link>
-      <NavbarItem>O czymś</NavbarItem>
-      <Link to="/products">
-        <NavbarItem>Produkty</NavbarItem>
-      </Link>
-      <Link to="/login">
-        <NavbarItem>Login</NavbarItem>
-      </Link>
+      <NavbarItem>
+        <form method="get" action="/about">
+          <button type="submit">O piekarni</button>
+        </form>
+      </NavbarItem>
+      <NavbarItem>
+        <form method="get" action="/products">
+          <button type="submit">Produkty</button>
+        </form>
+      </NavbarItem>
+      <NavbarItem>
+        <form method="get" action="/">
+          <button type="submit">Home</button>
+        </form>
+      </NavbarItem>
+      <NavbarItem>
+        <form method="get" action="/login">
+          <button type="submit">Login</button>
+        </form>
+      </NavbarItem>
     </NavbarWrapper>
   );
 };
