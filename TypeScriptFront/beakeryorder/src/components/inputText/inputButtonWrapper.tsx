@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const InputButtonWrapper = styled.button`
+const FormStyled = styled.form`
   color: brown;
   input[type="text"] {
     width: 100%;
@@ -30,35 +30,7 @@ const InputButtonWrapper = styled.button`
     border-radius: 4px;
     background-color: #80808040;
   }
-  .split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-  }
 
-  .left {
-    left: -20px;
-  }
-
-  .right {
-    right: 5%;
-  }
-
-  .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  .centered img {
-    width: 100%;
-    height: 100%;
-  }
   font: 22px "Times New Roman", serif;
   margin: 3em;
   width: 50%;
@@ -66,4 +38,15 @@ const InputButtonWrapper = styled.button`
   border: 5px solid #eac043;
 `;
 
-export default InputButtonWrapper;
+const FormButtonWrapper = styled.button`
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+`;
+
+export { FormStyled, FormButtonWrapper };

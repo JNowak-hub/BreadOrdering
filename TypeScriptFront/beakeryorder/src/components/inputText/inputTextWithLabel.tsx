@@ -1,14 +1,18 @@
 import React from "react";
+import { FormStyled, FormButtonWrapper } from "./inputButtonWrapper";
 
 const InputField = () => {
   const sendUserNameAndPassword = async () => {
     // POST request using fetch with async/await
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify({
-        username: "admin",
-        password: "adminadmin",
+        username: userName,
+        password: password,
       }),
     };
     const response = await fetch(
@@ -23,36 +27,25 @@ const InputField = () => {
   const [password, setPassword] = React.useState("");
 
   return (
-    <div>
-      <div className="split left">
-        <div className="centered">
-          <form>
-            <label>
-              UserName:
-              <input
-                type="text"
-                value={userName}
-                onChange={(event) => setUserName(event.target.value)}
-              />
-            </label>
-            <label>
-              Password:
-              <input
-                type="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-              />
-            </label>
-            <input type="submit" onClick={sendUserNameAndPassword} />
-          </form>
-        </div>
-      </div>
-      <div className="split right">
-        <div className="centered">
-          <img src="bread-login.jpg" />
-        </div>
-      </div>
-    </div>
+    <FormStyled>
+      <label>
+        UserName:
+        <input
+          type="text"
+          value={userName}
+          onChange={(event) => setUserName(event.target.value)}
+        />
+      </label>
+      <label>
+        Password:
+        <input
+          type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+      </label>
+      <FormButtonWrapper onClick={sendUserNameAndPassword} />
+    </FormStyled>
   );
 };
 export default InputField;

@@ -15,7 +15,7 @@ import java.io.IOException;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5000")
+@CrossOrigin(origins = "http://localhost:*")
 @RequestMapping("api/login")
 public class LoginController {
     @Value("${urlfailredirect.allUri}")

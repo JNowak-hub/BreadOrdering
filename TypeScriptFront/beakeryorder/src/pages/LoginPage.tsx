@@ -1,14 +1,16 @@
 import React, { FC } from "react";
-import InputButtonWrapper from "../components/inputText/inputButtonWrapper";
 import InputField from "../components/inputText/inputTextWithLabel";
-
+import {
+  BackgroundImageWrapper,
+  ContainerWrapper,
+} from "../components/styles/backgroundImageWrapper";
 const LoginPage = () => {
   return (
-    <h2>
-      <InputButtonWrapper>
+    <BackgroundImageWrapper>
+      <ContainerWrapper>
         <InputField />
-      </InputButtonWrapper>
-    </h2>
+      </ContainerWrapper>
+    </BackgroundImageWrapper>
   );
 };
 

@@ -10,27 +10,29 @@ import CustomDate from "./components/date/custom-date";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <div>
       <GlobalStyle />
-      <Navbar />
-      <Switch>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/users">
-          <Users />
-        </Route>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/login">
-          <LoginPage />
-        </Route>
-        <Route exact path="/products">
-          <Products />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/users">
+            <Users />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/login">
+            <LoginPage />
+          </Route>
+          <Route exact path="/products">
+            <Products />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 };
 
