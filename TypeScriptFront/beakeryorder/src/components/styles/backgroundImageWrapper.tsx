@@ -5,22 +5,22 @@ const BackgroundImageWrapper = styled.div`
   background-image: url("/bread-login.jpg");
 
   /* Control the height of the image */
-  min-height: 380px;
+  min-height: 100vh;
 
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  /* position: relative; */
 `;
 
 const ContainerWrapper = styled.div`
   /* Add styles to the form container */
-  position: absolute;
-  right: 0;
+  position: relative;
+  right: 2px;
   margin: 20px;
   max-width: 300px;
-  padding: 16px;
+  padding: 2px;
   background-color: rgba;
 `;
 export { BackgroundImageWrapper, ContainerWrapper };

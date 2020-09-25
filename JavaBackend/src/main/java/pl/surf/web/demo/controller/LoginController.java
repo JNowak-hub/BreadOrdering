@@ -15,7 +15,7 @@ import java.io.IOException;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:*")
+@CrossOrigin(origins = "{cross.origin}")
 @RequestMapping("api/login")
 public class LoginController {
     @Value("${urlfailredirect.allUri}")
@@ -37,7 +37,6 @@ public class LoginController {
     @GetMapping("{error}")
     public ResponseEntity<String> failFacebookAuthentication(@Valid @PathVariable String error, HttpServletResponse response) {
         try {
-//            response.sendRedirect("http://localhost:5000/");
             response.sendRedirect(redirectFailUri);
         } catch (IOException e) {
             e.printStackTrace();

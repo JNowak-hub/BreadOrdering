@@ -1,11 +1,17 @@
 import React from "react";
-import { FormStyled, FormButtonWrapper } from "./inputButtonWrapper";
+import {
+  FormStyled,
+  FormButtonWrapper,
+  InputFieldWrapper,
+} from "../styles/inputButtonWrapper";
+import LabelWrapper from "../styles/labelStyle";
 
 const InputField = () => {
   const sendUserNameAndPassword = async () => {
     // POST request using fetch with async/await
     const requestOptions = {
       method: "POST",
+      credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -15,12 +21,21 @@ const InputField = () => {
         password: password,
       }),
     };
-    const response = await fetch(
-      "http://localhost:8080/api/login",
-      requestOptions
-    );
+    const response = await fetch("http://localhost:8080/api/login", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        username: userName,
+        password: password,
+      }),
+    });
     const data = await response.json();
-    console.log(data);
+
+    await window.localStorage.setItem("jwt", data.jwt);
   };
 
   const [userName, setUserName] = React.useState("");
@@ -28,23 +43,26 @@ const InputField = () => {
 
   return (
     <FormStyled>
-      <label>
+      <LabelWrapper>
         UserName:
-        <input
+        <InputFieldWrapper
           type="text"
           value={userName}
           onChange={(event) => setUserName(event.target.value)}
         />
-      </label>
-      <label>
+      </LabelWrapper>
+      <LabelWrapper>
         Password:
-        <input
+        <InputFieldWrapper
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-      </label>
-      <FormButtonWrapper onClick={sendUserNameAndPassword} />
+      </LabelWrapper>
+      <FormButtonWrapper onClick={sendUserNameAndPassword}>
+        Login
+      </FormButtonWrapper>
+      <FormButtonWrapper>SingIn</FormButtonWrapper>
     </FormStyled>
   );
 };

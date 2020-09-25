@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 import NavbarWrapper from "./NavbarWraper";
 import NavbarItem from "./NavbarItem";
 import { Link } from "react-router-dom";
-
+import NavbarButtonWrapper from "../styles/NavbarButtonWrapper";
+import TimeWrapper from "../styles/TimeWrapper";
 const Navbar = () => {
   const [time, setTime] = React.useState("");
 
@@ -30,26 +31,28 @@ const Navbar = () => {
 
   return (
     <NavbarWrapper>
-      <NavbarItem>Time: {time}</NavbarItem>
       <NavbarItem>
-        <form method="get" action="/about">
-          <button type="submit">O piekarni</button>
-        </form>
+        <TimeWrapper>Time: {time}</TimeWrapper>
       </NavbarItem>
       <NavbarItem>
-        <form method="get" action="/products">
-          <button type="submit">Produkty</button>
-        </form>
+        <Link to="/about">
+          <NavbarButtonWrapper>O piekarni</NavbarButtonWrapper>
+        </Link>
       </NavbarItem>
       <NavbarItem>
-        <form method="get" action="/">
-          <button type="submit">Home</button>
-        </form>
+        <Link to="/products">
+          <NavbarButtonWrapper>Produkty</NavbarButtonWrapper>
+        </Link>
       </NavbarItem>
       <NavbarItem>
-        <form method="get" action="/login">
-          <button type="submit">Login</button>
-        </form>
+        <Link to="/">
+          <NavbarButtonWrapper>Home</NavbarButtonWrapper>
+        </Link>
+      </NavbarItem>
+      <NavbarItem>
+        <Link to="/login">
+          <NavbarButtonWrapper>Login</NavbarButtonWrapper>
+        </Link>
       </NavbarItem>
     </NavbarWrapper>
   );

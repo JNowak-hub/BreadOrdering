@@ -6,11 +6,9 @@ import {
 } from "../components/styles/backgroundImageWrapper";
 const LoginPage = () => {
   return (
-    <BackgroundImageWrapper>
-      <ContainerWrapper>
-        <InputField />
-      </ContainerWrapper>
-    </BackgroundImageWrapper>
+    <ContainerWrapper>
+      <InputField />
+    </ContainerWrapper>
   );
 };
 

@@ -1,18 +1,17 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import About from "./pages/About";
 import Navbar from "./components/navBar/Navbar";
 import LoginPage from "./pages/LoginPage";
 import GlobalStyle from "./components/GlobalStyle";
 import Products from "./pages/Products";
-import Header from "./components/test/header";
-import CustomDate from "./components/date/custom-date";
+import { BackgroundImageWrapper } from "./components/styles/backgroundImageWrapper";
 
 const App = () => {
   return (
-    <div>
+    <BrowserRouter>
       <GlobalStyle />
-      <BrowserRouter>
+      <BackgroundImageWrapper>
         <Navbar />
         <Switch>
           <Route exact path="/about">
@@ -31,8 +30,8 @@ const App = () => {
             <Products />
           </Route>
         </Switch>
-      </BrowserRouter>
-    </div>
+      </BackgroundImageWrapper>
+    </BrowserRouter>
   );
 };
 
